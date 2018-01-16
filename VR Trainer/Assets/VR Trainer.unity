@@ -184,7 +184,7 @@ GameObject:
   - component: {fileID: 51852482}
   m_Layer: 0
   m_Name: BlueWire
-  m_TagString: Untagged
+  m_TagString: Wire
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -840,7 +840,6 @@ GameObject:
   - component: {fileID: 256664978}
   - component: {fileID: 256664979}
   - component: {fileID: 256664972}
-  - component: {fileID: 256664981}
   m_Layer: 0
   m_Name: BlueTerminalTwo
   m_TagString: Terminal
@@ -944,7 +943,7 @@ Transform:
   m_GameObject: {fileID: 256664971}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.2328, y: 0.019, z: 0.0858}
-  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
+  m_LocalScale: {x: 0.04, y: 0.04, z: 0.04}
   m_Children: []
   m_Father: {fileID: 51852484}
   m_RootOrder: 1
@@ -985,27 +984,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.45
+  m_Radius: 0.5
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: -0.0000009536743}
---- !u!114 &256664981
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 256664971}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 975dd9ff97117094fb25e665595ae7b9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MasterPart: {fileID: 1786043019}
-  EnergyPacketPrefab: {fileID: 1645223800297528, guid: 9ff8a752a0dae8c4281bb3af4dbd4a70,
-    type: 2}
-  MaxEnergyPackets: 8
-  FirstTarget: {fileID: 1841076499}
-  Interval: 0.5
 --- !u!1 &265643841
 GameObject:
   m_ObjectHideFlags: 0
@@ -1432,7 +1414,7 @@ GameObject:
   - component: {fileID: 380254100}
   - component: {fileID: 380254099}
   m_Layer: 0
-  m_Name: WhiteTerminalTwo
+  m_Name: BlackTerminalTwo
   m_TagString: Terminal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1494,7 +1476,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.45
+  m_Radius: 0.5
   m_Height: 1
   m_Direction: 1
   m_Center: {x: -0.00000047683716, y: 0.00000047683716, z: 0}
@@ -1580,7 +1562,7 @@ Transform:
   m_GameObject: {fileID: 380254097}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.735, y: 0.008, z: 0.362}
-  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
+  m_LocalScale: {x: 0.04, y: 0.04, z: 0.04}
   m_Children: []
   m_Father: {fileID: 1758049224}
   m_RootOrder: 1
@@ -1738,10 +1720,34 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.45
+  m_Radius: 0.5
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0.0000009536743, z: 0}
+--- !u!1 &401684233 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1697655268896172, guid: db139c4eb546a1b4bb9c3a8bdba68212,
+    type: 2}
+  m_PrefabInternal: {fileID: 1399317409}
+--- !u!114 &401684239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 401684233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 975dd9ff97117094fb25e665595ae7b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MasterPart: {fileID: 1786043019}
+  EnergyPacketPrefab: {fileID: 1645223800297528, guid: 9ff8a752a0dae8c4281bb3af4dbd4a70,
+    type: 2}
+  EnergyPacketStartingObject: {fileID: 0}
+  MaxEnergyPackets: 0
+  FirstTarget: {fileID: 0}
+  Interval: 0.25
+  IsOn: 1
 --- !u!1 &450549110
 GameObject:
   m_ObjectHideFlags: 0
@@ -2646,7 +2652,7 @@ GameObject:
   - component: {fileID: 894216662}
   - component: {fileID: 894216661}
   m_Layer: 0
-  m_Name: WhiteTerminalOne
+  m_Name: BlackTerminalOne
   m_TagString: Terminal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2708,7 +2714,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.45
+  m_Radius: 0.5
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0.0000009536743, z: 0}
@@ -2794,7 +2800,7 @@ Transform:
   m_GameObject: {fileID: 894216659}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.038, y: 0.059, z: 0.159}
-  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
+  m_LocalScale: {x: 0.04, y: 0.04, z: 0.04}
   m_Children: []
   m_Father: {fileID: 1758049224}
   m_RootOrder: 0
@@ -3513,7 +3519,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.45
+  m_Radius: 0.5
   m_Height: 1
   m_Direction: 1
   m_Center: {x: -0.00000047683716, y: 0.00000047683716, z: 0}
@@ -3526,7 +3532,7 @@ Transform:
   m_GameObject: {fileID: 1172428139}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.643, y: 0.014, z: 0.36}
-  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
+  m_LocalScale: {x: 0.04, y: 0.04, z: 0.04}
   m_Children: []
   m_Father: {fileID: 1954880547}
   m_RootOrder: 1
@@ -3540,7 +3546,7 @@ Transform:
   m_GameObject: {fileID: 401555000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.1674, y: 0.021, z: 0.2042}
-  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
+  m_LocalScale: {x: 0.04, y: 0.04, z: 0.04}
   m_Children: []
   m_Father: {fileID: 1954880547}
   m_RootOrder: 0
@@ -4631,8 +4637,8 @@ GameObject:
   - component: {fileID: 1758049223}
   - component: {fileID: 1758049222}
   m_Layer: 0
-  m_Name: WhiteWire
-  m_TagString: Untagged
+  m_Name: BlackWire
+  m_TagString: Wire
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4652,7 +4658,7 @@ LineRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 2100000, guid: 3264d49bcc9a5994baec39653f84c21e, type: 2}
+  - {fileID: 2100000, guid: 36ac08bf8a2d0ff4a9546100c0139088, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5282,7 +5288,7 @@ Transform:
   m_GameObject: {fileID: 1841076498}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.019, y: 0.07, z: 0.0087}
-  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
+  m_LocalScale: {x: 0.04, y: 0.04, z: 0.04}
   m_Children: []
   m_Father: {fileID: 51852484}
   m_RootOrder: 0
@@ -5323,7 +5329,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.45
+  m_Radius: 0.5
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0.00000023841858, y: 0.0000009536743, z: 0}
@@ -5441,7 +5447,7 @@ GameObject:
   - component: {fileID: 1954880545}
   m_Layer: 0
   m_Name: RedWire
-  m_TagString: Untagged
+  m_TagString: Wire
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

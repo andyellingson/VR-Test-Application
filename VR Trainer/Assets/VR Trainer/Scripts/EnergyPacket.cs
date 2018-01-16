@@ -8,6 +8,7 @@ namespace VRTrainer
     {
 
         public GameObject CurrentTarget;
+        public GameObject StartingObject; //set up before runtime
         //Debug text
         [SerializeField] private TextMeshPro DebugText;
 
@@ -21,7 +22,6 @@ namespace VRTrainer
         {
             if (CurrentTarget != null)
                 Move(CurrentTarget.transform.position);
-         
         }
 
         public void Move(Vector3 target)
@@ -82,13 +82,35 @@ namespace VRTrainer
             GameObject newTerminalObject = terminal.ConnectedGameObject;
 
             if (newTerminalObject != null)
-                newTerminal = newTerminalObject.GetComponent<Terminal>();
+            {
+                //determine what type of object were connected to
+                if (newTerminalObject.transform.parent.gameObject.tag.Equals("Wire"))
+                {
+                    //were connecting to another wire terminal return this terminal's other end
+                    return newTerminalObject.GetComponent<Terminal>().Other;
+                }
 
+                newTerminal = newTerminalObject.GetComponent<Terminal>();
+            }
             //on other part terminal
             newTerminal = newTerminal.Other;
             if(newTerminal != null)
             {
                 newTerminalObject = newTerminal.ConnectedGameObject;
+
+                //energy packets have filled the entire circuit 
+                //signal factory to quit making packets
+                if(newTerminalObject == StartingObject)
+                {
+                    EnergyPacketFactory factory = null;
+                    Terminal tempTerminal = StartingObject.GetComponent<Terminal>();
+                    GameObject tempObject = tempTerminal.ConnectedGameObject;
+                    factory = tempObject.GetComponent<EnergyPacketFactory>();
+                    if(factory != null)
+                    {
+                        factory.IsOn = false;
+                    }
+                }
             }
 
             //teleport to new starting point
