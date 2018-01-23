@@ -29,7 +29,7 @@ namespace VRStandardAssets.Utils
 
 
         [SerializeField] private float m_DoubleClickTime = 0.3f;    //The max time allowed between double clicks
-        [SerializeField] private float m_SwipeWidth = 0.3f;         //The width of a swipe
+        [SerializeField] private float m_SwipeWidth = 0.4f;         //The width of a swipe
 
         
         private Vector2 m_MouseDownPosition;                        // The screen position of the mouse when Fire1 is pressed.
